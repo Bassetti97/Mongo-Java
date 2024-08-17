@@ -17,9 +17,8 @@ public class ShowController {
     private ShowRepository showRepository;
 
     @PostMapping
-    public ResponseEntity<Show> addShow(@RequestBody Show show) {
-        Show savedShow = showRepository.save(show);
-        return new ResponseEntity<>(savedShow, HttpStatus.CREATED);
+    public Show addShow(@RequestBody Show show) {
+        return showRepository.save(show);
     }
 
     @GetMapping
